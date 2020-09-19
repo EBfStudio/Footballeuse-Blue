@@ -27,6 +27,9 @@
         <item name="android:statusBarColor">?attr/colorSurface</item>
         <item name="android:windowLightStatusBar" tools:targetApi="m">true</item>
 
+        <!-- Setting navigation bar color -->
+        <item name="android:navigationBarColor">?attr/colorSurface</item>
+
         <!-- Remove activity animation -->
         <item name="android:windowAnimationStyle">@null</item>
     </style>
