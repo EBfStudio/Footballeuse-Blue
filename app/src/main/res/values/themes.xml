@@ -1,6 +1,7 @@
 <resources xmlns:tools="http://schemas.android.com/tools">
+
     <!-- Base application theme. -->
-    <style name="Theme.Footballeuse" parent="Theme.MaterialComponents.DayNight.DarkActionBar">
+    <style name="Base.Footballeuse" parent="Theme.MaterialComponents.DayNight.DarkActionBar">
         <!-- Primary brand color. -->
         <item name="colorPrimary">@color/purple_500</item>
         <item name="colorPrimaryVariant">@color/purple_700</item>
@@ -13,4 +14,25 @@
         <item name="android:statusBarColor" tools:targetApi="l">?attr/colorPrimaryVariant</item>
         <!-- Customize your theme here. -->
     </style>
+
+    <style name="Base.Footballeuse.Launcher">
+        <!-- Removing action bar -->
+        <item name="windowActionBar">false</item>
+        <item name="windowNoTitle">true</item>
+
+        <!-- Setting up background to launcher theme -->
+        <item name="android:windowBackground">@drawable/launcher_screen</item>
+
+        <!-- Setting up white status bar -->
+        <item name="android:statusBarColor">?attr/colorSurface</item>
+        <item name="android:windowLightStatusBar" tools:targetApi="m">true</item>
+
+        <!-- Remove activity animation -->
+        <item name="android:windowAnimationStyle">@null</item>
+    </style>
+
+    <style name="AppTheme" parent="Base.Footballeuse" />
+
+    <style name="AppTheme.Launcher" parent="Base.Footballeuse.Launcher" />
+
 </resources>
