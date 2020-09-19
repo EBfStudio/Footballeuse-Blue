@@ -14,7 +14,8 @@ class TimberInitializer : Initializer<Unit> {
         if (BuildConfig.DEBUG) {
             Timber.plant(Timber.DebugTree())
         } else {
-            TODO("Timber.plant(CrashlyticsTree())")
+            Timber.plant(Timber.DebugTree())
+            // TODO("Timber.plant(CrashlyticsTree())")
         }
         Timber.d("init ok")
     }
