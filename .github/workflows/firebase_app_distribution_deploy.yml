@@ -21,7 +21,7 @@ jobs:
           keyStorePassword: ${{ secrets.KEY_STORE_PASSWORD }}
           keyPassword: ${{ secrets.KEY_PASSWORD }}
 
-      - run: echo ${{ SIGNED_RELEASE_FILE }}
+      - run: echo $SIGNED_RELEASE_FILE
 
       # - name: Build the app
       #  run: ./gradlew assembleRelease
