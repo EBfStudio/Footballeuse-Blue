@@ -23,12 +23,4 @@ jobs:
       - uses: actions/checkout@v2
 
       - name: Build the app
-        run: ./gradlew assembleRelease
-
-      - name: upload artifact to Firebase App Distribution
-        uses: wzieba/Firebase-Distribution-Github-Action@v1
-        with:
-          appId: ${{secrets.FIREBASE_APP_ID}}
-          token: ${{secrets.FIREBASE_TOKEN}}
-          groups: testers
-          file: app/build/outputs/apk/release/app-release-unsigned.apk
+        run: ./gradlew build
