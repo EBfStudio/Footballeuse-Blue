@@ -1,0 +1,40 @@
+{
+  "project_info": {
+    "project_number": "497329057396",
+    "firebase_url": "https://footballeuse-ebf.firebaseio.com",
+    "project_id": "footballeuse-ebf",
+    "storage_bucket": "footballeuse-ebf.appspot.com"
+  },
+  "client": [
+    {
+      "client_info": {
+        "mobilesdk_app_id": "1:497329057396:android:a35f9748e1747f15eaeb21",
+        "android_client_info": {
+          "package_name": "com.ebfstudio.footballeuse"
+        }
+      },
+      "oauth_client": [
+        {
+          "client_id": "497329057396-hpl2ncpdrim065c022e191tddinkira8.apps.googleusercontent.com",
+          "client_type": 3
+        }
+      ],
+      "api_key": [
+        {
+          "current_key": "AIzaSyC1fAukHuadsS2JRUSoKFtLBL1dsor6JAY"
+        }
+      ],
+      "services": {
+        "appinvite_service": {
+          "other_platform_oauth_client": [
+            {
+              "client_id": "497329057396-hpl2ncpdrim065c022e191tddinkira8.apps.googleusercontent.com",
+              "client_type": 3
+            }
+          ]
+        }
+      }
+    }
+  ],
+  "configuration_version": "1"
+}
