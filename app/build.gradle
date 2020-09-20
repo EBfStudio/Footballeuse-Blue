@@ -3,6 +3,7 @@ plugins {
     id 'com.google.gms.google-services'
     id 'kotlin-android'
     id 'kotlin-kapt'
+    id 'com.github.alexfu.androidautoversion'
 }
 
 android {
@@ -13,8 +14,8 @@ android {
         applicationId "com.ebfstudio.footballeuse"
         minSdkVersion 21
         targetSdkVersion 30
-        versionCode 1
-        versionName "0.0.1"
+        versionCode androidAutoVersion.versionCode
+        versionName androidAutoVersion.versionName
         testInstrumentationRunner "androidx.test.runner.AndroidJUnitRunner"
     }
 
