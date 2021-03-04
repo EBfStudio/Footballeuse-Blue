@@ -1,0 +1,171 @@
+<?xml version="1.0" encoding="utf-8"?>
+<layout xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
+    xmlns:tools="http://schemas.android.com/tools">
+
+    <data>
+
+        <variable
+            name="match"
+            type="com.ebfstudio.footballeuse.model.Match" />
+
+    </data>
+
+    <androidx.cardview.widget.CardView
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:layout_margin="8dp">
+
+        <androidx.constraintlayout.widget.ConstraintLayout
+            android:layout_width="match_parent"
+            android:layout_height="match_parent">
+
+            <ImageView
+                android:id="@+id/competitionLogo"
+                android:layout_width="30dp"
+                android:layout_height="30dp"
+                android:layout_marginStart="8dp"
+                app:imageUrl="@{match.competition.logoUrl}"
+                app:layout_constraintBottom_toTopOf="@+id/separator"
+                app:layout_constraintStart_toStartOf="parent"
+                app:layout_constraintTop_toTopOf="parent"
+                tools:srcCompat="@tools:sample/avatars" />
+
+            <TextView
+                android:id="@+id/competitionInfos"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:layout_marginStart="8dp"
+                android:text="@{match.competition.name}"
+                app:layout_constraintBottom_toBottomOf="@+id/competitionLogo"
+                app:layout_constraintStart_toEndOf="@+id/competitionLogo"
+                app:layout_constraintTop_toTopOf="@+id/competitionLogo"
+                tools:text="D1, 18ème tour" />
+
+            <TextView
+                android:id="@+id/matchStadium"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:layout_marginEnd="8dp"
+                android:text="@{match.stadium}"
+                app:layout_constraintBottom_toBottomOf="@+id/competitionInfos"
+                app:layout_constraintEnd_toEndOf="parent"
+                app:layout_constraintTop_toTopOf="@+id/competitionInfos"
+                tools:text="Stade vélodrome" />
+
+            <View
+                android:id="@+id/separator"
+                android:layout_width="0dp"
+                android:layout_height="1dp"
+                android:layout_marginStart="8dp"
+                android:layout_marginTop="50dp"
+                android:layout_marginEnd="8dp"
+                android:background="@color/purple_200"
+                app:layout_constraintEnd_toEndOf="parent"
+                app:layout_constraintStart_toStartOf="parent"
+                app:layout_constraintTop_toTopOf="parent" />
+
+            <com.google.android.material.chip.Chip
+                android:id="@+id/liveChip"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:layout_marginTop="16dp"
+                android:text="Live"
+                app:chipIcon="@drawable/chip_icon"
+                app:layout_constraintEnd_toEndOf="parent"
+                app:layout_constraintStart_toStartOf="parent"
+                app:layout_constraintTop_toBottomOf="@+id/separator"
+                app:textStartPadding="0dp" />
+
+            <androidx.constraintlayout.widget.Guideline
+                android:id="@+id/guideline"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:orientation="horizontal"
+                app:layout_constraintGuide_begin="102dp" />
+
+            <ImageView
+                android:id="@+id/homeLogo"
+                android:layout_width="60dp"
+                android:layout_height="60dp"
+                app:imageUrl="@{match.teamHome.logoUrl}"
+                app:layout_constraintEnd_toStartOf="@+id/liveChip"
+                app:layout_constraintStart_toStartOf="parent"
+                app:layout_constraintTop_toTopOf="@+id/guideline"
+                tools:srcCompat="@tools:sample/avatars" />
+
+            <TextView
+                android:id="@+id/homeName"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:layout_marginTop="8dp"
+                android:text="@{match.teamHome.name}"
+                app:layout_constraintEnd_toEndOf="@+id/homeLogo"
+                app:layout_constraintStart_toStartOf="@+id/homeLogo"
+                app:layout_constraintTop_toBottomOf="@+id/homeLogo"
+                tools:text="Lyon" />
+
+            <TextView
+                android:id="@+id/homeScore"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:layout_marginEnd="8dp"
+                android:text='@{match.scoreHome + ``}'
+                android:textAppearance="@style/TextAppearance.AppCompat.Display1"
+                app:layout_constraintBottom_toBottomOf="@+id/twoDots"
+                app:layout_constraintEnd_toStartOf="@+id/twoDots"
+                app:layout_constraintTop_toTopOf="@+id/twoDots"
+                tools:text="2" />
+
+            <ImageView
+                android:id="@+id/awayLogo"
+                android:layout_width="60dp"
+                android:layout_height="60dp"
+                app:imageUrl="@{match.teamAway.logoUrl}"
+                app:layout_constraintEnd_toEndOf="parent"
+                app:layout_constraintStart_toEndOf="@+id/liveChip"
+                app:layout_constraintTop_toTopOf="@+id/guideline"
+                tools:srcCompat="@tools:sample/avatars" />
+
+            <TextView
+                android:id="@+id/awayName"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:layout_marginTop="8dp"
+                android:text="@{match.teamAway.name}"
+                app:layout_constraintEnd_toEndOf="@+id/awayLogo"
+                app:layout_constraintStart_toStartOf="@+id/awayLogo"
+                app:layout_constraintTop_toBottomOf="@+id/awayLogo"
+                tools:text="Soyaux" />
+
+            <TextView
+                android:id="@+id/awayScore"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:layout_marginStart="8dp"
+                android:text='@{match.scoreAway + ``}'
+                android:textAppearance="@style/TextAppearance.AppCompat.Display1"
+                app:layout_constraintBottom_toBottomOf="@+id/twoDots"
+                app:layout_constraintStart_toEndOf="@+id/twoDots"
+                app:layout_constraintTop_toTopOf="@+id/twoDots"
+                tools:text="2" />
+
+            <TextView
+                android:id="@+id/twoDots"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:layout_marginTop="8dp"
+                android:layout_marginBottom="70dp"
+                android:text=":"
+                android:textAppearance="@style/TextAppearance.AppCompat.Display1"
+                app:layout_constraintBottom_toBottomOf="parent"
+                app:layout_constraintEnd_toEndOf="parent"
+                app:layout_constraintStart_toStartOf="parent"
+                app:layout_constraintTop_toBottomOf="@+id/liveChip"
+                app:layout_constraintVertical_bias="0.0" />
+
+        </androidx.constraintlayout.widget.ConstraintLayout>
+
+    </androidx.cardview.widget.CardView>
+
+</layout>
